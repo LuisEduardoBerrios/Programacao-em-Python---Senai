@@ -4,9 +4,7 @@ from tkinter import ttk
 from tkinter import messagebox
 import customtkinter as ctk
 
-# -------------------------------
 # BANCO DE DADOS
-# -------------------------------
 def conectar():
     return sqlite3.connect('banco.db')
 
@@ -94,10 +92,8 @@ def deletar_perfil():
     else:
         messagebox.showerror('', 'SELECIONE UM REGISTRO PARA DELETAR')
 
-
-# -------------------------------
 # INTERFACE GRÁFICA
-# -------------------------------
+
 janela = ctk.CTk()
 janela.title("Perfil do Investidor - CRUD")
 janela.geometry("900x700")
@@ -142,16 +138,13 @@ risco_combobox.set("Baixo")
 frame_botoes = ctk.CTkFrame(janela, fg_color="#7E4B8C")
 frame_botoes.grid(row=2, column=0, pady=20)
 
-btn_salvar = ctk.CTkButton(frame_botoes, text="SALVAR", fg_color="#9b59b6",
-                           command=inserir_perfil)
+btn_salvar = ctk.CTkButton(frame_botoes, text="SALVAR", fg_color="#9b59b6",command=inserir_perfil)
 btn_salvar.grid(row=0, column=0, padx=15, pady=10)
 
-btn_atualizar = ctk.CTkButton(frame_botoes, text="ATUALIZAR", fg_color="#3498db",
-                              command=atualizar_perfil)
+btn_atualizar = ctk.CTkButton(frame_botoes, text="ATUALIZAR", fg_color="#3498db",command=atualizar_perfil)
 btn_atualizar.grid(row=0, column=1, padx=15, pady=10)
 
-btn_deletar = ctk.CTkButton(frame_botoes, text="DELETAR", fg_color="#e67e22",
-                            command=deletar_perfil)
+btn_deletar = ctk.CTkButton(frame_botoes, text="DELETAR", fg_color="#e67e22",command=deletar_perfil)
 btn_deletar.grid(row=0, column=2, padx=15, pady=10)
 
 # TABELA
